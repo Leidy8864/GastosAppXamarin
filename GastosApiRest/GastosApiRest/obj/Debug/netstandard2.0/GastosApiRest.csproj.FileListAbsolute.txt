@@ -1,0 +1,14 @@
+C:\repo\Gastos\GastosApiRest\GastosApiRest\GastosApiRest\bin\Debug\netstandard2.0\GastosApiRest.deps.json
+C:\repo\Gastos\GastosApiRest\GastosApiRest\GastosApiRest\bin\Debug\netstandard2.0\GastosApiRest.dll
+C:\repo\Gastos\GastosApiRest\GastosApiRest\GastosApiRest\obj\Debug\netstandard2.0\GastosApiRest.csprojAssemblyReference.cache
+C:\repo\Gastos\GastosApiRest\GastosApiRest\GastosApiRest\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\repo\Gastos\GastosApiRest\GastosApiRest\GastosApiRest\obj\Debug\netstandard2.0\GastosApiRest.csproj.CoreCompileInputs.cache
+C:\repo\Gastos\GastosApiRest\GastosApiRest\GastosApiRest\obj\Debug\netstandard2.0\GastosApiRest.AssemblyInfoInputs.cache
+C:\repo\Gastos\GastosApiRest\GastosApiRest\GastosApiRest\obj\Debug\netstandard2.0\GastosApiRest.AssemblyInfo.cs
+C:\repo\Gastos\GastosApiRest\GastosApiRest\GastosApiRest\obj\Debug\netstandard2.0\Views\AddGastoPage.xaml.g.cs
+C:\repo\Gastos\GastosApiRest\GastosApiRest\GastosApiRest\obj\Debug\netstandard2.0\Views\EditGastoPage.xaml.g.cs
+C:\repo\Gastos\GastosApiRest\GastosApiRest\GastosApiRest\obj\Debug\netstandard2.0\Views\MainPage.xaml.g.cs
+C:\repo\Gastos\GastosApiRest\GastosApiRest\GastosApiRest\bin\Debug\netstandard2.0\GastosApiRest.pdb
+C:\repo\Gastos\GastosApiRest\GastosApiRest\GastosApiRest\obj\Debug\netstandard2.0\XamlC.stamp
+C:\repo\Gastos\GastosApiRest\GastosApiRest\GastosApiRest\obj\Debug\netstandard2.0\GastosApiRest.dll
+C:\repo\Gastos\GastosApiRest\GastosApiRest\GastosApiRest\obj\Debug\netstandard2.0\GastosApiRest.pdb

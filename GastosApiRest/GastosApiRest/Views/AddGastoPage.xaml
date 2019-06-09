@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GastosApiRest.Views.AddGastoPage"
+             xmlns:viewModels="clr-namespace:GastosApiRest.ViewModels"
+             Title="Create New Gasto">
+
+    <ContentPage.BindingContext>
+        <viewModels:AddGastoViewModel />
+    </ContentPage.BindingContext>
+
+    <StackLayout VerticalOptions="Center"
+                 Spacing="20"
+                 Padding="20">
+
+        <Entry Text="{Binding SelectedGasto.Nombre}"
+               FontSize="24"
+               Placeholder="Nombre" />
+
+        <Entry Text="{Binding SelectedGasto.Apellidos}"
+               FontSize="24"
+               Placeholder="Apellidos" />
+
+        <Entry Text="{Binding SelectedGasto.TipoGasto}"
+               FontSize="24"
+               Placeholder="Tipo de gasto" />
+
+        <Entry Text="{Binding SelectedGasto.Monto}"
+               FontSize="24"
+               Placeholder="Monto" />
+
+        <Button Text="Send Gasto"
+                BackgroundColor="DodgerBlue"
+                TextColor="White"
+                FontSize="30"
+                Command="{Binding SendGastoCommand}" />
+
+    </StackLayout>
+
+</ContentPage>
