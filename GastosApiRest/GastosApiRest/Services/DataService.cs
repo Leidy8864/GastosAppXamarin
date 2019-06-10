@@ -1,16 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
-using GastosApiRest.Models;
 
 namespace GastosApiRest.Services
 {
     public class DataService
     {
-        private string Url = "localhost:3000/gasto/";
+        private string Url = "https://gastos-api-rest.herokuapp.com/gasto/";
 
         public async Task<List<Gasto>> GetGastos()
         {
@@ -27,14 +28,24 @@ namespace GastosApiRest.Services
         {
             var httpClient = new HttpClient();
 
-            var json = JsonConvert.SerializeObject(gasto);
+            try
+            {
+                var json = JsonConvert.SerializeObject(gasto);
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
+                HttpResponseMessage response = null;
+                response = await httpClient.PostAsync(Url, content);
 
-            StringContent content = new StringContent(json);
+                if (response.IsSuccessStatusCode)
+                {
+                    Debug.WriteLine(@"\tTodoItem successfully saved.");
+                }
 
-            content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+            } catch (Exception ex)
+            {
+                Debug.WriteLine(@"\tERROR {0}", ex.Message);
+            }
+        } 
 
-            var result = await httpClient.PostAsync(Url, content);
-        }
 
         public async Task PutGasto(string id, Gasto gasto)
         {

@@ -1,5 +1,4 @@
 ﻿using System;
-using GastosApiRest.Models;
 using GastosApiRest.Views;
 using Xamarin.Forms;
 

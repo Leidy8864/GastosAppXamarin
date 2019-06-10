@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Windows.Input;
-using GastosApiRest.Models;
 using GastosApiRest.Services;
 using Xamarin.Forms;
 
@@ -14,16 +13,16 @@ namespace GastosApiRest.ViewModels
 
         public ICommand EditGastoCommand => new Command(async () =>
         {
-            SelectedGasto.FechaGasto = DateTime.UtcNow;
+            SelectedGasto.fechaGasto = DateTime.UtcNow;
 
-            await _dataService.PutGasto(SelectedGasto.Id, SelectedGasto);
+            await _dataService.PutGasto(SelectedGasto._id, SelectedGasto);
         });
 
         public ICommand DeleteGastoCommand => new Command(async () =>
         {
-            SelectedGasto.FechaGasto = DateTime.UtcNow;
+            SelectedGasto.fechaGasto = DateTime.UtcNow;
 
-            await _dataService.DeleteGasto(SelectedGasto.Id);
+            await _dataService.DeleteGasto(SelectedGasto._id);
         });
     }
 }

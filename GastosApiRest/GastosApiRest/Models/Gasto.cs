@@ -1,21 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using GastosApiRest.Models;
+using System;
 
-namespace GastosApiRest.Models
+namespace GastosApiRest
 {
     public class Gasto
     {
-        public string Id { get; set; }
+        public string _id { get; set; }
 
-        public string Nombre { get; set; }
+        public string nombre { get; set; }
 
-        public string Apellidos { get; set; }
+        public string apellidos { get; set; }
 
-        public DateTime FechaGasto { get; set; }
+        public DateTime fechaGasto { get; set; }
 
-        public double Monto { get; set; }
+        public double monto { get; set; }
 
-        public string TipoGasto { get; set; }
+        public string tipoGasto { get; set; }
     }
 }

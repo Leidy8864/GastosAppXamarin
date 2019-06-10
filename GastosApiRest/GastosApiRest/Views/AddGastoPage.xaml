@@ -1,40 +1,36 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:GastosApiRest.ViewModels;assembly=GastosApiRest"
              x:Class="GastosApiRest.Views.AddGastoPage"
-             xmlns:viewModels="clr-namespace:GastosApiRest.ViewModels"
-             Title="Create New Gasto">
-
+             Title="Nuevo Gasto">
     <ContentPage.BindingContext>
-        <viewModels:AddGastoViewModel />
+        <viewModels:AddGastoViewModel/>
     </ContentPage.BindingContext>
 
     <StackLayout VerticalOptions="Center"
-                 Spacing="20"
-                 Padding="20">
+                     Spacing="20"
+                     Padding="20">
+        <Entry Text="{Binding Nombre}"
+                FontSize="20"
+                Placeholder="Nombre" />
 
-        <Entry Text="{Binding SelectedGasto.Nombre}"
-               FontSize="24"
-               Placeholder="Nombre" />
+        <Entry Text="{Binding Apellidos}"
+                FontSize="20"
+                Placeholder="Apellidos" />
 
-        <Entry Text="{Binding SelectedGasto.Apellidos}"
-               FontSize="24"
-               Placeholder="Apellidos" />
+        <Entry Text="{Binding TipoGasto}"
+                FontSize="20"
+                Placeholder="Tipo de gasto" />
 
-        <Entry Text="{Binding SelectedGasto.TipoGasto}"
-               FontSize="24"
-               Placeholder="Tipo de gasto" />
+        <Entry Text="{Binding Monto}"
+                FontSize="20"
+                Placeholder="Monto" />
 
-        <Entry Text="{Binding SelectedGasto.Monto}"
-               FontSize="24"
-               Placeholder="Monto" />
-
-        <Button Text="Send Gasto"
+        <Button Text="Guardar"
                 BackgroundColor="DodgerBlue"
                 TextColor="White"
-                FontSize="30"
+                FontSize="20"
                 Command="{Binding SendGastoCommand}" />
-
     </StackLayout>
-
 </ContentPage>

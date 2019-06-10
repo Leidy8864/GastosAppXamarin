@@ -4,7 +4,6 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using System.Windows.Input;
-using GastosApiRest.Models;
 using GastosApiRest.Services;
 using Xamarin.Forms;
 

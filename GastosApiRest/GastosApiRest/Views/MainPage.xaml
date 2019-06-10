@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="GastosApiRest.MainPage"
              xmlns:viewModels="clr-namespace:GastosApiRest.ViewModels"
-             Title="All my Gastos">
+             Title="Mis Gastos">
 
     <ContentPage.BindingContext>
         <viewModels:MainViewModel />
@@ -11,7 +11,7 @@
 
     <StackLayout>
 
-        <Button Text="Add Gasto"
+        <Button Text="Nuevo Gasto"
                 Clicked="Button_OnClicked"
                 BackgroundColor="DodgerBlue"
                 TextColor="White"
@@ -34,24 +34,24 @@
                     <ViewCell>
                         <StackLayout Padding="12">
                             <StackLayout Orientation="Horizontal">
-                                <Label Text="{Binding Id, StringFormat='{0}-'}"
+                                <Label Text="{Binding _id, StringFormat='{0}-'}"
                                        TextColor="DodgerBlue"
                                        FontAttributes="Bold"
-                                       FontSize="24"
+                                       FontSize="5"
                                        WidthRequest="36"/>
-                                <Label Text="{Binding Nombre}"
+                                <Label Text="{Binding nombre}"
                                        TextColor="Navy"
                                        FontSize="28"
                                        FontAttributes="Bold" />
-                                <Label Text="{Binding Apellidos}"
+                                <Label Text="{Binding apellidos}"
                                        TextColor="Navy"
                                        FontSize="28"
                                        FontAttributes="Bold" />
                             </StackLayout>
                             <Grid>
-                                <Label Text="{Binding IsDone, StringFormat='Done: {0}'}"
+                                <Label Text="{Binding monto}"
                                        TextColor="DeepPink"/>
-                                <Label Text="{Binding FechaGasto, StringFormat='{0:MMM dd, yyyy}'}"
+                                <Label Text="{Binding fechaGasto, StringFormat='{0:MMM dd, yyyy}'}"
                                        TextColor="LightSeaGreen"
                                        HorizontalOptions="End"/>
                             </Grid>

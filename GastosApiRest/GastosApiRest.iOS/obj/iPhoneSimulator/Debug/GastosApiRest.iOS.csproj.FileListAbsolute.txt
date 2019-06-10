@@ -56,3 +56,4 @@ C:\repo\Gastos\GastosApiRest\GastosApiRest\GastosApiRest.iOS\obj\iPhoneSimulator
 C:\repo\Gastos\GastosApiRest\GastosApiRest\GastosApiRest.iOS\obj\iPhoneSimulator\Debug\GastosApiRest.iOS.csproj.CopyComplete
 C:\repo\Gastos\GastosApiRest\GastosApiRest\GastosApiRest.iOS\obj\iPhoneSimulator\Debug\GastosApiRest.iOS.exe
 C:\repo\Gastos\GastosApiRest\GastosApiRest\GastosApiRest.iOS\obj\iPhoneSimulator\Debug\GastosApiRest.iOS.pdb
+C:\repo\Gastos\GastosApiRest\GastosApiRest\GastosApiRest.iOS\bin\iPhoneSimulator\Debug\GastosApiRest.dll.mdb

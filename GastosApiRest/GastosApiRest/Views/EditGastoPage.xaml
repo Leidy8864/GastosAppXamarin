@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewModels="clr-namespace:GastosApiRest.ViewModels;assembly=GastosApiRest"
              x:Class="GastosApiRest.Views.EditGastoPage"
-             Title="Update or Delete Gasto">
+             Title="Actualizar o Borrar">
 
     <!--<ContentPage.BindingContext>
         <viewModels:EditGastoViewModel/>
@@ -12,29 +12,31 @@
     <StackLayout VerticalOptions="Center"
                  Spacing="20"
                  Padding="20">
+        <Entry Text="{Binding SelectedGasto.nombre}" />
 
-        <Entry Text="{Binding SelectedGasto.Nombre}" />
+        <Entry Text="{Binding SelectedGasto.apellidos}" />
 
-        <Entry Text="{Binding SelectedGasto.Apellidos}" />
+        <Entry Text="{Binding SelectedGasto.monto}" />
 
-        <Entry Text="{Binding SelectedGasto.MontoGasto}" />
+        <Entry Text="{Binding SelectedGasto.tipoGasto}" />
 
-        <Entry Text="{Binding SelectedGasto.Monto}" />
-
-        <Entry Text="{Binding SelectedGasto.TipoGasto}" />
-
-        <Button Text="Edit Gasto"
+        <StackLayout Orientation="Horizontal"  HorizontalOptions="FillAndExpand">
+            <StackLayout Orientation="Vertical"  HorizontalOptions="FillAndExpand">
+                <Button Text="Editar"
                 BackgroundColor="DodgerBlue"
                 TextColor="White"
-                FontSize="30"
+                FontSize="15"
                 Command="{Binding EditGastoCommand}"/>
-
-        <Button Text="Delete Gasto"
+            </StackLayout>
+            <StackLayout Orientation="Vertical"  HorizontalOptions="FillAndExpand">
+                <Button Text="Eliminar"
                 BackgroundColor="DeepPink"
                 TextColor="White"
-                FontSize="30"
+                FontSize="15"
                 Command="{Binding DeleteGastoCommand}" />
-
+            </StackLayout>
+        </StackLayout>
+        
     </StackLayout>
 
 </ContentPage>

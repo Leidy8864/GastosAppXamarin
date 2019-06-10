@@ -1,5 +1,4 @@
-﻿using GastosApiRest.Models;
-using GastosApiRest.ViewModels;
+﻿using GastosApiRest.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
