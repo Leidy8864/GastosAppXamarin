@@ -1,5 +1,4 @@
-﻿using GastosApiRest.Models;
-using System;
+﻿using System;
 
 namespace GastosApiRest
 {

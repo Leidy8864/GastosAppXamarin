@@ -11,19 +11,19 @@
     <StackLayout VerticalOptions="Center"
                      Spacing="20"
                      Padding="20">
-        <Entry Text="{Binding Nombre}"
+        <Entry Text="{Binding SelectedGasto.nombre}"
                 FontSize="20"
                 Placeholder="Nombre" />
 
-        <Entry Text="{Binding Apellidos}"
+        <Entry Text="{Binding SelectedGasto.apellidos}"
                 FontSize="20"
                 Placeholder="Apellidos" />
 
-        <Entry Text="{Binding TipoGasto}"
+        <Entry Text="{Binding SelectedGasto.tipoGasto}"
                 FontSize="20"
                 Placeholder="Tipo de gasto" />
 
-        <Entry Text="{Binding Monto}"
+        <Entry Text="{Binding SelectedGasto.monto}"
                 FontSize="20"
                 Placeholder="Monto" />
 

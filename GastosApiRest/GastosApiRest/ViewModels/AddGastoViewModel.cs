@@ -8,84 +8,22 @@ using Xamarin.Forms;
 
 namespace GastosApiRest.ViewModels
 {
-    public class AddGastoViewModel : ViewModelBase
+    public class AddGastoViewModel
     {
         private DataService _dataService = new DataService();
 
-        string nombre;
-        public string Nombre
-        {
-            get { return nombre; }
-            set
-            {
-                if (nombre != value)
-                {
-                    nombre = value;
-                    OnPropertyChanged();
-                }
-            }
-        }
+        public Gasto SelectedGasto { get; set; }
 
-        string apellidos;
-        public string Apellidos
+        public ICommand SendGastoCommand => new Command(async () =>
         {
-            get { return apellidos; }
-            set
-            {
-                if (apellidos != value)
-                {
-                    apellidos = value;
-                    OnPropertyChanged();
-                }
-            }
-        }
+            SelectedGasto.fechaGasto = DateTime.UtcNow;
 
-        string monto;
-        public string Monto
-        {
-            get { return monto; }
-            set
-            {
-                if (monto != value)
-                {
-                    monto = value;
-                    OnPropertyChanged();
-                }
-            }
-        }
-
-        string tipoGasto;
-        public string TipoGasto
-        {
-            get { return tipoGasto; }
-            set
-            {
-                if (tipoGasto != value)
-                {
-                    tipoGasto = value;
-                    OnPropertyChanged();
-                }
-            }
-        }
-
-        public ICommand SendGastoCommand { protected set; get; }
+            await _dataService.PostGasto(SelectedGasto);
+        });
 
         public AddGastoViewModel()
-        {        
-            SendGastoCommand = new Command( async() =>
-            {
-                var SelectedGasto = new Gasto
-                {
-                    nombre = Nombre,
-                    apellidos = Apellidos,
-                    monto = Double.Parse(Monto),
-                    fechaGasto = DateTime.UtcNow,
-                    tipoGasto = TipoGasto
-                };
-                Console.WriteLine(Apellidos + Nombre);
-                Console.WriteLine(JsonConvert.SerializeObject(SelectedGasto));
-                await _dataService.PostGasto(SelectedGasto);
-            });
+        {
+            SelectedGasto = new Gasto();
         }
     }
 }

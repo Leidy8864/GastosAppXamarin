@@ -9,19 +9,31 @@ using Newtonsoft.Json;
 
 namespace GastosApiRest.Services
 {
+
     public class DataService
     {
+        public List<Gasto> Gastos { get; private set; }
+
         private string Url = "https://gastos-api-rest.herokuapp.com/gasto/";
 
         public async Task<List<Gasto>> GetGastos()
         {
             var httpClient = new HttpClient();
 
-            var json = await httpClient.GetStringAsync(Url);
+            Gastos = new List<Gasto>();
 
-            var gastos = JsonConvert.DeserializeObject<List<Gasto>>(json);
+            try
+            {
+                var json = await httpClient.GetStringAsync(Url);
 
-            return gastos;
+                Gastos = JsonConvert.DeserializeObject<List<Gasto>>(json);
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(@"\tERROR {0}", ex.Message);
+            }
+
+            return Gastos;
         }
 
         public async Task PostGasto(Gasto gasto)
@@ -31,16 +43,22 @@ namespace GastosApiRest.Services
             try
             {
                 var json = JsonConvert.SerializeObject(gasto);
-                var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+                StringContent content = new StringContent(json);
+
+                content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+
                 HttpResponseMessage response = null;
+
                 response = await httpClient.PostAsync(Url, content);
 
                 if (response.IsSuccessStatusCode)
                 {
-                    Debug.WriteLine(@"\tTodoItem successfully saved.");
+                    Debug.WriteLine(@"\tGasto creado.");
                 }
 
-            } catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 Debug.WriteLine(@"\tERROR {0}", ex.Message);
             }
@@ -51,20 +69,47 @@ namespace GastosApiRest.Services
         {
             var httpClient = new HttpClient();
 
-            var json = JsonConvert.SerializeObject(gasto);
+            try
+            {
+                var json = JsonConvert.SerializeObject(gasto);
 
-            StringContent content = new StringContent(json);
+                StringContent content = new StringContent(json);
 
-            content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+                content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
 
-            var result = await httpClient.PutAsync(Url + id, content);
+                HttpResponseMessage response = null;
+
+                response = await httpClient.PutAsync(Url + id, content);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    Debug.WriteLine(@"\tGasto actualizado.");
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(@"\tERROR {0}", ex.Message);
+            }
         }
 
         public async Task DeleteGasto(string id)
         {
             var httpClient = new HttpClient();
 
-            var response = await httpClient.DeleteAsync(Url + id);
+            try
+            {
+                var response = await httpClient.DeleteAsync(Url + id);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    Debug.WriteLine(@"\tGasto borrado.");
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(@"\tERROR {0}", ex.Message);
+            }
         }
     }
 }
