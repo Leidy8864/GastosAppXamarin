@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Input;
 using GastosApiRest.Services;
+using Newtonsoft.Json;
 using Xamarin.Forms;
 
 namespace GastosApiRest.ViewModels

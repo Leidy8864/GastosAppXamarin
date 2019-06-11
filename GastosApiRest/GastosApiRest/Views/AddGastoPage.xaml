@@ -28,6 +28,7 @@
                 Placeholder="Monto" />
 
         <Button Text="Guardar"
+                BorderRadius="15"
                 BackgroundColor="DodgerBlue"
                 TextColor="White"
                 FontSize="20"
